@@ -17,7 +17,7 @@
         padding: 0;
       }
     </style>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_Zm04P88Hy7-9E6UN4xV-CoCFUuePe0E"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_Zm04P88Hy7-9E6UN4xV-CoCFUuePe0E&libraries=geometry"></script>
     <script src="MeasureTool.min.js"></script>
     <script>
       // This example creates a custom overlay called USGSOverlay, containing
@@ -39,12 +39,12 @@
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 9,
           center: {lat: 44.706580, lng: -110.476206},
-          mapTypeId: 'satellite'
+          mapTypeId: 'satellite',
+          scaleControl: true
         });
 
 		var measureTool = new MeasureTool(map, {
 			showSegmentLength: true,
-			tooltip: true,
 			unit: MeasureTool.UnitTypeId.IMPERIAL // metric or imperial
 		});
 
