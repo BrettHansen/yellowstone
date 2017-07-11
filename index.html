@@ -18,6 +18,7 @@
       }
     </style>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_Zm04P88Hy7-9E6UN4xV-CoCFUuePe0E"></script>
+    <script src="MeasureTool.min.js"></script>
     <script>
       // This example creates a custom overlay called USGSOverlay, containing
       // a U.S. Geological Survey (USGS) image of the relevant area on the map.
@@ -40,6 +41,12 @@
           center: {lat: 44.706580, lng: -110.476206},
           mapTypeId: 'satellite'
         });
+
+		var measureTool = new MeasureTool(map, {
+			showSegmentLength: true,
+			tooltip: true,
+			unit: MeasureTool.UnitTypeId.IMPERIAL // metric or imperial
+		});
 
         var bounds = new google.maps.LatLngBounds(
             new google.maps.LatLng(44.091641, -111.197712),
